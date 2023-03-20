@@ -44,7 +44,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = "default"
+    network = "dhruv-vpc"
 
     access_config {
       // Ephemeral public IP
