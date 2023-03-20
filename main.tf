@@ -24,7 +24,7 @@ resource "google_storage_bucket" "auto-expire" {
 
 resource "google_compute_instance" "default" {
   name         = "engineer-cloud-nprod-instance"
-  machine_type = "e2-medium"
+  machine_type = "n1-standard-1"
   zone         = "us-central1-a"
 
   tags = ["foo", "bar"]
