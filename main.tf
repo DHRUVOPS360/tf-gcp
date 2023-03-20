@@ -22,6 +22,11 @@ resource "google_storage_bucket" "auto-expire" {
   }
 }
 
+resource "google_service_account" "default" {
+  account_id   = "engineer-cloud-nprod"
+  display_name = "Service Account"
+}
+
 resource "google_compute_instance" "default" {
   name         = "engineer-cloud-nprod-instance"
   machine_type = "e2-medium"
@@ -37,7 +42,6 @@ resource "google_compute_instance" "default" {
       }
     }
   }
-}
 
   // Local SSD disk
   scratch_disk {
@@ -58,3 +62,9 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = "echo hi > /test.txt"
 
+  service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = google_service_account.default.email
+    scopes = ["cloud-platform"]
+  }
+}
