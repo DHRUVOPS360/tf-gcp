@@ -44,13 +44,13 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = "dhruv-vpc"
-
-    access_config {
-      // Ephemeral public IP
-    }
+  network = "projects/engineer-cloud-nprod/global/networks/dhruv-vpc"
+  subnetwork = "projects/engineer-cloud-nprod/regions/us-central1/subnetworks/dhruv-subnet"
+  access_config {
+      // ...
   }
-
+}
+  
   metadata = {
     foo = "bar"
   }
