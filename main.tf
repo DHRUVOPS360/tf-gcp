@@ -1,4 +1,4 @@
-/*resource "google_storage_bucket" "auto-expire" {
+resource "google_storage_bucket" "auto-expire" {
   name          = "engineer-cloud-nprod-bucket"
   location      = "US"
   force_destroy = true
@@ -57,4 +57,4 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = "echo hi > /test.txt"
 }
-*/
+
