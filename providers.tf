@@ -1,9 +1,13 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
-      version = "4.57.0"
+      source  = "hashicorp/google"
+      version = "4.58.0"
     }
+  }
+backend "gcs" {
+    bucket  = "dhruv-backend-bucket"
+    prefix  = "jenkins-terraform-backend"
   }
 }
 
