@@ -44,8 +44,8 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-  network = "projects/engineer-cloud-nprod/global/networks/dhruv-vpc"
-  subnetwork = "projects/engineer-cloud-nprod/regions/us-central1/subnetworks/dhruv-subnet"
+  network = "projects/engineer-cloud-nprod/global/networks/default"
+  subnetwork = "projects/engineer-cloud-nprod/regions/us-central1/subnetworks/default"
   access_config {
       // ...
   }
