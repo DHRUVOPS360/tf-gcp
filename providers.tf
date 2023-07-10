@@ -6,8 +6,8 @@ terraform {
     }
   }
 backend "gcs" {
-    bucket  = "dhruv-backend-bucket"
-    prefix  = "jenkins-terraform-backend"
+    bucket  = "dhruv-jenkins-server-backend"
+    prefix  = "jenkins-backend"
   }
 }
 
